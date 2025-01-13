@@ -1,38 +1,256 @@
-*
-{
+/* Reset styles */
+* {
     margin: 0;
     padding: 0;
 }
 
-html
-{
-    background: #1e1a20;
+@font-face {
+    font-family: 'StarJedi';
+    src: url('../fonts/StarJedi.ttf') format('truetype');
 }
 
-.webgl
-{
+/* Background color for the entire page */
+html {
+    height: 100%;
+    width: 100%;
+    background: #1e1a20; /* Initial background color */
+    animation: colorcycle 240s infinite; /* Apply color cycle animation (slower) */
+}
+
+/* WebGL canvas setup */
+.webgl {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     outline: none;
+    z-index: 0;
 }
 
+.rotated-title{
+    font-size: 3rem;
+}
 
-.section
-{
+/* Transparent header */
+.transparent-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0); /* Transparent black background */
+    color: #fff;
+    font-family: 'Cabin', sans-serif; /* Same font as the rest of the website */
+    backdrop-filter: blur(5px); /* Optional: Add blur effect to enhance transparency*/
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1); /* Slight shadow at the bottom */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Ensures proper alignment of navbar items */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    font-family: 'Cabin', sans-serif; /* Same font as the rest of the website */
+    margin-left: auto; /* Pushes the nav links to the right */
+
+}
+.nav-links li {
+    font-size: 3rem; /* Consistent font size */
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+    transform: scale(1.1);
+}
+
+/* Section styles */
+.section {
     display: flex;
     align-items: center;
-    height: 100vh;
-    position: relative;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    position: absolute; /* Use absolute positioning to control its exact location */
+    top: 20%; /* Position it 5% below the center */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -50%); /* Use translate to fine-tune the centering */
     font-family: 'Cabin', sans-serif;
     color: #ffeded;
     text-transform: uppercase;
-    font-size: 7vmin;
-    padding-left: 10%;
-    padding-right: 10%;
+    font-size: 2rem; /* Updated font size */
+    z-index: 1;
 }
 
-section:nth-child(odd)
-{
-    justify-content: flex-end;
+/* The container for all flip cards, using flexbox to center the cards */
+.flip-card-container {
+    display: flex;
+    justify-content: center;  /* Centers the cards horizontally */
+    align-items: center;      /* Centers the cards vertically */
+    flex-wrap: wrap;          /* Allows the cards to wrap to the next row if necessary */
+    height: 80vh;            /* Full viewport height */
+    margin: 10%;                /* Remove default margin */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* The flip card container itself */
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 250px;
+    perspective: 1000px;  /* Remove this if you don't want the 3D effect */
+    margin: 10px;         /* Adds space between the cards */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do a horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 20px;  /* Apply smooth edges to both sides */
+}
+
+/* Style the front side with a square frame and smooth edges */
+.flip-card-front {
+    background-color: #bbb;
+}
+
+/* Style the back side with transparent background */
+.flip-card-back {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slightly transparent white background */
+    color: white;
+    transform: rotateY(180deg);
+    backdrop-filter: blur(2px);  /* Adds blur effect */
+    
+}
+
+/* Separate page css section */
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: absolute;
+    top: var(--slideshow-top, 50%); /* Adjustable top position using a CSS variable */
+    left: var(--slideshow-left, 50%); /* Adjustable left position using a CSS variable */
+    transform: translate(50%, 0); /* Centers horizontally by default */
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+/* Smooth background color cycle with green and purple shades */
+@keyframes colorcycle {
+    0%   { background-color: #004F4F; }  /* Darker Green */
+    25%  { background-color: #054D4F; }  /* Darker Green */
+    50%  { background-color: #093F47; }  /* Darker Green */
+    75%  { background-color: #0F3C3F; }  /* Darker Green */
+    100% { background-color: #16313F; }  /* Darker Green */
 }
