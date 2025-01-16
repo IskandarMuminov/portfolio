@@ -6,8 +6,6 @@ const parameters = {
     materialColor: '#ffeded'
 }
 
-
-
 /**
  * Base
  */
