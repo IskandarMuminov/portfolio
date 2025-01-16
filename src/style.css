@@ -344,27 +344,12 @@ body{
 
 /* Video container */
 .video-container {
-    position: relative;
-    height: 700px; /* Limit the height */
-    padding-bottom: 0; /* Remove the aspect ratio padding */
-    overflow: hidden;
-    max-width: 80%; /* Limit the width of the video */
-    background: #000; /* Black background for the video area */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin: 0 auto 20px auto; /* Center horizontally and add space at the bottom */
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box; /* Ensure consistent padding and dimensions */
-    border-radius: 20px;  /* Apply smooth edges to both sides */
+
 }
 
 /* Make iframe responsive */
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+
 }
 
 /* Transparent footer */
