@@ -11,7 +11,7 @@ html {
     height: 100%;
     width: 100%;
     background: #1e1a20; /* Initial background color */
-    animation: colorcycle 120s infinite; /* Apply color cycle animation (slower) */
+    animation: colorcycle 90s infinite; /* Apply color cycle animation (slower) */
 }
 
 body{
@@ -92,6 +92,7 @@ body{
 
 /* Section styles */
 .section {
+    position: relative; /* Set relative to flow naturally below the header */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,6 +189,7 @@ body{
     align-items: flex-start; /* Align containers to the top */
     margin-top: 10%; /* Space from the top of the page */
     height: 60svh;
+    min-height: 77.5svh;
 }
 
 /* Slideshow container */
@@ -381,7 +383,7 @@ body{
     display: flex;
     justify-content: center; /* Center align the icons */
     align-items: center;
-    padding: 50px 20px; /* Add vertical padding for spacing */
+    padding-top: 50px; /* Add vertical padding for spacing */
     margin-top: 20px; /* Add spacing between content and footer */
 }
 
@@ -442,3 +444,285 @@ body{
     75%  { background-color: #0F3C3F; }  /* Darker Green */
     100% { background-color: #16313F; }  /* Darker Green */
 }
+
+/* Tablet styles (screens between 768px and 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .transparent-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0); /* Transparent black background */
+        color: #fff;
+        font-family: 'Roboto Flex', sans-serif; /* Same font as the rest of the website */
+        backdrop-filter: blur(5px); /* Optional: Add blur effect to enhance transparency*/
+        box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1); /* Slight shadow at the bottom */
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Ensures proper alignment of navbar items */
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .rotated-title{
+        font-size: 2rem;
+    }
+    
+    .nav-links {
+        flex-direction:row;
+        gap: 20px; /* Reduce the gap between links */
+        align-items: flex-start; /* Align the links to the left */
+        margin-left: 0; /* Reset the margin */
+    }
+
+    .nav-links li {
+        font-size: 1.8rem; /* Slightly smaller font size for better fit */
+        text-align: left; /* Align the text to the left */
+    }
+    
+    .section {
+        position: relative; /* Set relative to flow naturally below the header */
+        margin: 10% auto; /* Add a margin of 10px and center it horizontally */
+        top: 0; /* Remove absolute positioning adjustments */
+        left: 0;
+        transform: none; /* Remove translate for natural flow */
+        width: 90%; /* Adjust the width to fit the screen */
+        font-size: 1.8rem; /* Slightly smaller font for better readability on tablets */
+        text-align: center; /* Center-align text for better appearance */
+    }
+
+    /* Adjust the .flip-card-container for tablet */
+    .flip-card-container {
+        flex-direction: column; /* Stack cards vertically */
+        justify-content: flex-start; /* Align cards to the top */
+        align-items: center; /* Center cards horizontally */
+        height: auto; /* Allow container height to adapt to its content */
+        margin: -50px auto; /* Add spacing and center horizontally */
+        width: 90%; /* Fit container within the screen */
+    }
+
+    /* Adjust .flip-card dimensions for tablet */
+    .flip-card {
+        width: 300px; /* Reduce the width for better fit on smaller screens */
+        height: 200px; /* Adjust height proportionally */
+        margin: 10px; /* Maintain spacing between cards */
+    }
+    
+    .transparent-footer {
+        position: relative; /* Ensures it flows with the content */
+        bottom: 0; /* Always stays at the bottom of the page */
+        width: 100%; /* Full width */
+        height: auto; /* Adapt height to content */
+        padding: 30px 0px; /* Slightly smaller padding for tablets */
+        margin-top: 10%; /* Larger spacing between content and footer */
+        font-size: 1rem; /* Adjust text size for better readability */
+        z-index: 10;
+    }
+    
+        /* Adjust social media icons for tablet */
+    .transparent-footer .social-icons {
+        gap: 50px; /* Reduce gap between icons */
+    }
+    
+    .transparent-footer .social-icons a {
+        font-size: 2em; /* Make icons smaller for tablets */
+    }
+    
+    .aboutme {
+        position: absolute; /* Enable precise placement */
+        top: 40%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+        width: 90%; /* Slightly narrower width for better fit on tablets */
+        padding: 20px 30px; /* Adjust padding for a compact layout */
+        font-size: 1rem; /* Reduce font size slightly for tablets */
+        line-height: 1.6; /* Maintain readability with reduced font size */
+    }
+
+    /* Adjust heading styles for tablet */
+    .aboutme h2 {
+        font-size: 2rem; /* Slightly smaller heading for tablets */
+    }
+
+    .paragraph-container {
+        width:35%; /* Set the width of the paragraph container */
+        margin-left: 55%; /* Space between the slideshow and paragraph */
+        margin-top: 2%;
+        font-family: 'Roboto Flex', sans-serif;
+        color: #ffffff; /* Text color */
+        overflow-wrap: break-word; /* Ensure long words break to the next line */
+        overflow: hidden; /* Hide any overflowing text */
+        box-sizing: border-box; /* Include padding in width calculations */
+    }
+    
+    .paragraph-container p {
+        font-size: 0.9em; /* Slightly smaller font size */
+        line-height: calc(1ex / 0.35); /* Adjusted line spacing */
+        margin: calc(1ex / 0.35) 0; /* Adjusted spacing for paragraphs */
+    }
+    
+    /* Heading styles */
+    .paragraph-container h2 {
+        font-size: 1em; /* Slightly smaller heading font size */
+        line-height: calc(1ex / 0.45); /* Adjusted line spacing for headings */
+        margin: calc(1ex / 0.45) 0; /* Adjusted spacing for headings */
+    }
+    
+    /* Reduced margin between h2 and the following p */
+    .paragraph-container h2 + p {
+        margin-top: 2px; /* Slightly larger spacing for readability */
+    }
+    
+    /* Consistent margin between p and the next h2 */
+    .paragraph-container p + h2 {
+        margin-bottom: 2px; /* Slightly larger spacing for readability */
+    }
+
+}
+
+/* Mobile styles (screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+    .transparent-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0); /* Transparent black background */
+        color: #fff;
+        font-family: 'Roboto Flex', sans-serif; /* Same font as the rest of the website */
+        backdrop-filter: blur(5px); /* Optional: Add blur effect to enhance transparency*/
+        box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1); /* Slight shadow at the bottom */
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Ensures proper alignment of navbar items */
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .rotated-title{
+        font-size: 1rem;
+    }
+    
+    .nav-links {
+        flex-direction:row;
+        gap: 20px; /* Reduce the gap between links */
+        align-items: flex-start; /* Align the links to the left */
+        margin-left: 0; /* Reset the margin */
+    }
+
+    .nav-links li {
+        font-size: 1rem; /* Slightly smaller font size for better fit */
+        text-align: left; /* Align the text to the left */
+    }
+    
+    .section {
+        position: relative; /* Set relative to flow naturally below the header */
+        margin: 15% auto; /* Add a margin of 10px and center it horizontally */
+        top: 0; /* Remove absolute positioning adjustments */
+        left: 0;
+        transform: none; /* Remove translate for natural flow */
+        width: 100%; /* Adjust the width to fit the screen */
+        font-size: 1.2rem; /* Slightly smaller font for better readability on tablets */
+        text-align: center; /* Center-align text for better appearance */
+    }
+    .content-container {
+        display: flex;
+        justify-content: center; /* Center both containers horizontally */
+        align-items: flex-start; /* Align containers to the top */
+        margin-top: 10%; /* Space from the top of the page */
+        height: 60svh;
+        min-height: 80svh;
+    }
+
+    /* Adjust the .flip-card-container for tablet */
+    .flip-card-container {
+        flex-direction: column; /* Stack cards vertically */
+        justify-content: flex-start; /* Align cards to the top */
+        align-items: center; /* Center cards horizontally */
+        height: auto; /* Allow container height to adapt to its content */
+        margin: -50px auto; /* Add spacing and center horizontally */
+        width: 90%; /* Fit container within the screen */
+    }
+
+    /* Adjust .flip-card dimensions for tablet */
+    .flip-card {
+        width: 300px; /* Reduce the width for better fit on smaller screens */
+        height: 200px; /* Adjust height proportionally */
+        margin: 10px; /* Maintain spacing between cards */
+    }
+    
+    .transparent-footer {
+        position: relative; /* Ensures it flows with the content */
+        bottom: 0; /* Always stays at the bottom of the page */
+        width: 100%; /* Full width */
+        height: auto; /* Adapt height to content */
+        padding: 30px 0px; /* Slightly smaller padding for tablets */
+        margin-top: 10%; /* Larger spacing between content and footer */
+        font-size: 1rem; /* Adjust text size for better readability */
+        z-index: 10;
+    }
+    
+        /* Adjust social media icons for tablet */
+    .transparent-footer .social-icons {
+        gap: 50px; /* Reduce gap between icons */
+    }
+    
+    .transparent-footer .social-icons a {
+        font-size: 2em; /* Make icons smaller for tablets */
+    }
+    
+    .aboutme {
+        position: absolute; /* Enable precise placement */
+        top: 45%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+        width: 90%; /* Slightly narrower width for better fit on tablets */
+        padding: 20px 30px; /* Adjust padding for a compact layout */
+        font-size: 1rem; /* Reduce font size slightly for tablets */
+        line-height: 1.6; /* Maintain readability with reduced font size */
+    }
+
+    /* Adjust heading styles for tablet */
+    .aboutme h2 {
+        font-size: 1.5rem; /* Slightly smaller heading for tablets */
+    }
+
+    .paragraph-container {
+        width: 35%; /* Adjust width to fit most of the screen */
+        margin-left: 55%; /* Center the container horizontally */
+        margin-top: 10%; /* Add some spacing from the top */
+        font-family: 'Roboto Flex', sans-serif;
+        color: #ffffff; /* Keep text color consistent */
+        overflow-wrap: break-word; /* Ensure long words break to the next line */
+        overflow: hidden; /* Hide any overflowing text */
+        box-sizing: border-box; /* Include padding in width calculations */
+    }
+    
+    .paragraph-container p {
+        font-size: 0.65em; /* Reduce font size for smaller screens */
+        line-height: calc(1ex / 0.4); /* Adjust line spacing for readability */
+        margin: calc(1ex / 0.4) 0; /* Adjust paragraph margins */
+    }
+    
+    .paragraph-container h2 {
+        font-size: 0.7em; /* Reduce heading font size */
+        line-height: calc(1ex / 0.5); /* Adjust line spacing for readability */
+        margin: calc(1ex / 0.5) 0; /* Adjust margins for headings */
+    }
+    
+    .paragraph-container h2 + p {
+        margin-top: 3px; /* Slightly larger spacing for readability */
+    }
+    
+    .paragraph-container p + h2 {
+        margin-bottom: 3px; /* Slightly larger spacing for readability */
+    }
+
+}
+
