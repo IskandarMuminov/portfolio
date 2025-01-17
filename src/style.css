@@ -280,6 +280,7 @@ body{
     overflow-wrap: break-word; /* Ensure long words break to the next line */
     overflow: hidden; /* Hide any overflowing text */
     box-sizing: border-box; /* Include padding in width calculations */
+    z-index: 10;
 }
 
 /* Paragraph styles */
