@@ -19,17 +19,13 @@ function copyDir(src, dest) {
     if (lstatSync(srcPath).isDirectory()) {
       copyDir(srcPath, destPath)
     } else {
-      // Only copy files that aren't processed by Vite (HTML, JS, CSS are handled by build)
-      const shouldCopy = !item.match(/\.(js|ts|jsx|tsx|css|scss|less|styl|html|vue|svelte)$/)
-      if (shouldCopy) {
-        copyFileSync(srcPath, destPath)
-        console.log(`Copied: ${srcPath} -> ${destPath}`)
-      }
+      copyFileSync(srcPath, destPath)
+      console.log(`Copied: ${srcPath} -> ${destPath}`)
     }
   }
 }
 
-// Custom plugin to copy all non-processed files
+// Custom plugin to copy all assets
 function copyAssetsPlugin() {
   return {
     name: 'copy-assets',
@@ -46,21 +42,6 @@ function copyAssetsPlugin() {
           copyDir(folder, destFolder)
         }
       })
-      
-      // Also copy any other files directly in src that aren't processed
-      if (existsSync('src')) {
-        const items = readdirSync('src')
-        for (const item of items) {
-          const srcPath = resolve('src', item)
-          if (lstatSync(srcPath).isFile()) {
-            const shouldCopy = !item.match(/\.(js|ts|jsx|tsx|css|scss|less|styl|html|vue|svelte)$/)
-            if (shouldCopy) {
-              copyFileSync(srcPath, resolve('../dist', item))
-              console.log(`Copied file: ${srcPath} -> ../dist/${item}`)
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -77,10 +58,20 @@ export default {
         outDir: '../dist',
         emptyOutDir: true,
         sourcemap: true,
+        // Don't try to bundle these external scripts
         rollupOptions: {
             input: resolve(__dirname, 'src/index.html'),
+            // Externalize the scripts that shouldn't be bundled
+            external: [
+                './assets/bootstrap/js/bootstrap.min.js',
+                './assets/js/baguetteBox.min.js', 
+                './assets/js/template.js',
+                'assets/bootstrap/js/bootstrap.min.js',
+                'assets/js/baguetteBox.min.js',
+                'assets/js/template.js'
+            ],
         },
-        // Include more file types in the build
+        // Include all asset types
         assetsInclude: [
           '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', 
           '**/*.ico', '**/*.webp', '**/*.pdf', '**/*.txt', '**/*.md',
