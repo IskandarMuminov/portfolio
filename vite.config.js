@@ -25,29 +25,52 @@ function copyDir(src, dest) {
   }
 }
 
-// Custom plugin to copy all assets
+// Custom plugin to copy all assets and HTML files
 function copyAssetsPlugin() {
   return {
     name: 'copy-assets',
     writeBundle() {
       console.log('Copying additional assets...')
       
-      // Copy assets and projects folders recursively
-      const foldersToCopy = ['src/assets', 'src/projects']
+      // Copy assets folder recursively
+      if (existsSync('src/assets')) {
+        console.log('Copying src/assets to ../dist/assets')
+        copyDir('src/assets', '../dist/assets')
+      }
       
-      foldersToCopy.forEach(folder => {
-        if (existsSync(folder)) {
-          const destFolder = folder.replace('src/', '../dist/')
-          console.log(`Copying ${folder} to ${destFolder}`)
-          copyDir(folder, destFolder)
-        }
-      })
+      // Copy projects HTML files
+      if (existsSync('src/projects')) {
+        console.log('Copying src/projects to ../dist/projects')
+        copyDir('src/projects', '../dist/projects')
+      }
     }
   }
 }
 
+// Function to get all HTML files for multi-page setup
+function getHtmlInputs() {
+  const htmlFiles = {}
+  
+  // Main index.html
+  htmlFiles['index'] = resolve(__dirname, 'src/index.html')
+  
+  // Project HTML files
+  const projectsDir = resolve(__dirname, 'src/projects')
+  if (existsSync(projectsDir)) {
+    const projectFiles = readdirSync(projectsDir)
+    projectFiles.forEach(file => {
+      if (file.endsWith('.html')) {
+        const name = file.replace('.html', '')
+        htmlFiles[name] = resolve(projectsDir, file)
+      }
+    })
+  }
+  
+  return htmlFiles
+}
+
 export default {
-    base: "./",
+    base: './',
     root: 'src/',
     publicDir: '../static/',
     server: {
@@ -58,20 +81,25 @@ export default {
         outDir: '../dist',
         emptyOutDir: true,
         sourcemap: true,
-        // Don't try to bundle these external scripts
+        // Multi-page application configuration
         rollupOptions: {
-            input: resolve(__dirname, 'src/index.html'),
-            // Externalize the scripts that shouldn't be bundled
-            external: [
-                './assets/bootstrap/js/bootstrap.min.js',
-                './assets/js/baguetteBox.min.js', 
-                './assets/js/template.js',
-                'assets/bootstrap/js/bootstrap.min.js',
-                'assets/js/baguetteBox.min.js',
-                'assets/js/template.js'
-            ],
+            input: getHtmlInputs(),
+            output: {
+                // Ensure assets are properly organized
+                assetFileNames: (assetInfo) => {
+                    const extType = assetInfo.name.split('.')[1]
+                    if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+                        return 'assets/images/[name]-[hash][extname]'
+                    }
+                    if (/css/i.test(extType)) {
+                        return 'assets/css/[name]-[hash][extname]'
+                    }
+                    return 'assets/[name]-[hash][extname]'
+                },
+                chunkFileNames: 'assets/js/[name]-[hash].js',
+                entryFileNames: 'assets/js/[name]-[hash].js',
+            }
         },
-        // Include all asset types
         assetsInclude: [
           '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', 
           '**/*.ico', '**/*.webp', '**/*.pdf', '**/*.txt', '**/*.md',
