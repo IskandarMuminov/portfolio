@@ -25,6 +25,32 @@ function copyDir(src, dest) {
   }
 }
 
+function globalScriptsPlugin() {
+  return {
+    name: 'global-scripts',
+    transformIndexHtml(html) {
+      // Remove type="module" from global scripts that need to be in global scope
+      return html
+        .replace(
+          /<script src="\.\.\/(assets\/bootstrap\/js\/bootstrap\.min\.js)"[^>]*><\/script>/g,
+          '<script src="/$1"></script>'
+        )
+        .replace(
+          /<script src="\.\.\/(assets\/js\/baguetteBox\.min\.js)"[^>]*><\/script>/g,
+          '<script src="/$1"></script>'
+        )
+        .replace(
+          /<script src="\.\.\/(assets\/js\/template\.js)"[^>]*><\/script>/g,
+          '<script src="/$1"></script>'
+        )
+        .replace(
+          /<script type="module" src="\.\.\/(assets\/js\/background\.js)"[^>]*><\/script>/g,
+          '<script type="module" src="/$1"></script>'
+        );
+    }
+  }
+}
+
 // Custom plugin to copy all assets and HTML files
 function copyAssetsPlugin() {
   return {
@@ -114,6 +140,7 @@ export default {
                 '../src/**'
             ] 
         }),
-        copyAssetsPlugin()
+        copyAssetsPlugin(),
+        globalScriptsPlugin()
     ],
 }
