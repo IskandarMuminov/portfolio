@@ -95,6 +95,20 @@ function getHtmlInputs() {
   return htmlFiles
 }
 
+// Plugin to fix image href attributes to match src attributes
+function fixImageLinks() {
+  return {
+    name: 'fix-image-links',
+    transformIndexHtml(html) {
+      // Simple fix: make href attributes use the same path as src attributes
+      return html.replace(
+        /href="\.\.\/assets\/(img\/[^"]+\.(jpg|jpeg|png|gif|webp))"/g,
+        'href="assets/images/$1"'
+      );
+    }
+  }
+}
+
 export default {
     base: './',
     root: 'src/',
@@ -140,6 +154,7 @@ export default {
                 '../src/**'
             ] 
         }),
+        fixImageLinks(),
         copyAssetsPlugin(),
         globalScriptsPlugin()
     ],
