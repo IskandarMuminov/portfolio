@@ -1,23 +1,73 @@
 import restart from 'vite-plugin-restart'
 import { resolve } from 'path'
-import { copyFileSync, existsSync, mkdirSync, readdirSync, lstatSync } from 'fs'
+import { copyFileSync, existsSync, mkdirSync, readdirSync, lstatSync, readFileSync, writeFileSync } from 'fs'
 
-// Recursive directory copying function
-function copyDir(src, dest) {
+// Remove type="module" from global scripts that need to be in global scope
+// (baguetteBox.min.js is a plain UMD script that attaches itself via the
+// top-level `this`, which is undefined inside a module, so it silently
+// fails to define `window.baguetteBox` unless this runs).
+function fixGlobalScriptTags(html) {
+  return html
+    .replace(
+      /<script src="\.\.\/(assets\/bootstrap\/js\/bootstrap\.min\.js)"[^>]*><\/script>/g,
+      '<script src="/$1"></script>'
+    )
+    .replace(
+      /<script src="\.\.\/(assets\/js\/baguetteBox\.min\.js)"[^>]*><\/script>/g,
+      '<script src="/$1"></script>'
+    )
+    .replace(
+      /<script src="\.\.\/(assets\/js\/template\.js)"[^>]*><\/script>/g,
+      '<script src="/$1"></script>'
+    )
+    .replace(
+      /<script type="module" src="\.\.\/(assets\/js\/background\.js)"[^>]*><\/script>/g,
+      '<script type="module" src="/$1"></script>'
+    );
+}
+
+// Same fix as above, but for the raw project-page copy below: this site
+// deploys to a GitHub Pages subpath (iskandarmuminov.github.io/portfolio),
+// so a root-absolute "/assets/..." path 404s there. Keep the original
+// relative "../assets/..." path (already correct, since it's how the
+// image references in the same files resolve) and only drop type="module".
+function stripModuleKeepRelative(html) {
+  return html
+    .replace(
+      /<script src="(\.\.\/assets\/bootstrap\/js\/bootstrap\.min\.js)"[^>]*><\/script>/g,
+      '<script src="$1"></script>'
+    )
+    .replace(
+      /<script src="(\.\.\/assets\/js\/baguetteBox\.min\.js)"[^>]*><\/script>/g,
+      '<script src="$1"></script>'
+    )
+    .replace(
+      /<script src="(\.\.\/assets\/js\/template\.js)"[^>]*><\/script>/g,
+      '<script src="$1"></script>'
+    );
+}
+
+// Recursive directory copying function. When transformHtml is given, .html
+// files are passed through it instead of being copied byte-for-byte.
+function copyDir(src, dest, transformHtml) {
   if (!existsSync(src)) return
-  
+
   if (!existsSync(dest)) {
     mkdirSync(dest, { recursive: true })
   }
-  
+
   const items = readdirSync(src)
-  
+
   for (const item of items) {
     const srcPath = resolve(src, item)
     const destPath = resolve(dest, item)
-    
+
     if (lstatSync(srcPath).isDirectory()) {
-      copyDir(srcPath, destPath)
+      copyDir(srcPath, destPath, transformHtml)
+    } else if (transformHtml && item.endsWith('.html')) {
+      const html = readFileSync(srcPath, 'utf-8')
+      writeFileSync(destPath, transformHtml(html))
+      console.log(`Copied (transformed): ${srcPath} -> ${destPath}`)
     } else {
       copyFileSync(srcPath, destPath)
       console.log(`Copied: ${srcPath} -> ${destPath}`)
@@ -28,26 +78,7 @@ function copyDir(src, dest) {
 function globalScriptsPlugin() {
   return {
     name: 'global-scripts',
-    transformIndexHtml(html) {
-      // Remove type="module" from global scripts that need to be in global scope
-      return html
-        .replace(
-          /<script src="\.\.\/(assets\/bootstrap\/js\/bootstrap\.min\.js)"[^>]*><\/script>/g,
-          '<script src="/$1"></script>'
-        )
-        .replace(
-          /<script src="\.\.\/(assets\/js\/baguetteBox\.min\.js)"[^>]*><\/script>/g,
-          '<script src="/$1"></script>'
-        )
-        .replace(
-          /<script src="\.\.\/(assets\/js\/template\.js)"[^>]*><\/script>/g,
-          '<script src="/$1"></script>'
-        )
-        .replace(
-          /<script type="module" src="\.\.\/(assets\/js\/background\.js)"[^>]*><\/script>/g,
-          '<script type="module" src="/$1"></script>'
-        );
-    }
+    transformIndexHtml: fixGlobalScriptTags
   }
 }
 
@@ -57,7 +88,7 @@ function copyAssetsPlugin() {
     name: 'copy-assets',
     writeBundle() {
       console.log('Copying additional assets...')
-      
+
       // Copy assets folder recursively
       const assetsSrc = resolve(__dirname, 'src/assets')
       const assetsDest = resolve(__dirname, 'dist/assets')
@@ -66,12 +97,14 @@ function copyAssetsPlugin() {
         copyDir(assetsSrc, assetsDest)
       }
 
-      // Copy projects HTML files
+      // Copy projects HTML files, fixing up the same global script tags
+      // that transformIndexHtml applies to Vite-built pages, since this
+      // raw copy overwrites whatever Vite already emitted at this path.
       const projectsSrc = resolve(__dirname, 'src/projects')
       const projectsDest = resolve(__dirname, 'dist/projects')
       if (existsSync(projectsSrc)) {
         console.log(`Copying ${projectsSrc} to ${projectsDest}`)
-        copyDir(projectsSrc, projectsDest)
+        copyDir(projectsSrc, projectsDest, stripModuleKeepRelative)
       }
     }
   }
