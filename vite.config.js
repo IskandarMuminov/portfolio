@@ -47,6 +47,24 @@ function stripModuleKeepRelative(html) {
     );
 }
 
+// background.js does `import * as THREE from 'three'` - a bare specifier
+// that only resolves once Vite bundles it. The raw project-page copy would
+// otherwise ship that unbundled source verbatim, which throws in the
+// browser and silently kills the animated background on every project
+// page. Point it at the real bundled chunk Vite already built instead.
+function findBundledBackgroundFile(jsDir) {
+  if (!existsSync(jsDir)) return null
+  return readdirSync(jsDir).find(f => /^background-.*\.js$/.test(f)) || null
+}
+
+function fixBackgroundScriptSrc(html, bundledFilename) {
+  if (!bundledFilename) return html
+  return html.replace(
+    /<script type="module" src="\.\.\/assets\/js\/background\.js"><\/script>/g,
+    `<script type="module" src="../assets/js/${bundledFilename}"></script>`
+  )
+}
+
 // Recursive directory copying function. When transformHtml is given, .html
 // files are passed through it instead of being copied byte-for-byte.
 function copyDir(src, dest, transformHtml) {
@@ -103,8 +121,11 @@ function copyAssetsPlugin() {
       const projectsSrc = resolve(__dirname, 'src/projects')
       const projectsDest = resolve(__dirname, 'dist/projects')
       if (existsSync(projectsSrc)) {
+        const bundledBackground = findBundledBackgroundFile(resolve(assetsDest, 'js'))
         console.log(`Copying ${projectsSrc} to ${projectsDest}`)
-        copyDir(projectsSrc, projectsDest, stripModuleKeepRelative)
+        copyDir(projectsSrc, projectsDest, (html) =>
+          fixBackgroundScriptSrc(stripModuleKeepRelative(html), bundledBackground)
+        )
       }
     }
   }
