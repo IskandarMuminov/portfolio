@@ -63,6 +63,10 @@
                             <p>Take on ex-coworkers, weaponize your surroundings, and embrace the chaos of janky rigidbody physics in NineToFight. Inspired by Gang Beasts and Human: Fall Flat, this multiplayer brawler blends PvE combat with puzzle-solving and parkour challenges. Battle through levels, overcome hilarious physics-driven obstacles, and ultimately steal the crown from your Boss.</p>
                             <p>Originally developed over three months for the UTS subject Game Design Studio 1 and first presented at the UTS Autumn Tech Fest’s Games Showcase, NineToFight will also be showcased at SXSW Sydney 2025, marking an exciting next step for the project.</p>
                             <p>My primary contributions included project management, game design, and gameplay programming.</p>
+                            <p>The biggest challange for me, was to create a system that would connect all game systems together creating a seamless gameplay experience that would immitate players movements across level's in the office building.</p>
+                            <p>To solve this technical challenge, I have decided to use Singleton pattern due to its simplicity paired with Event Bus system to decouple the most vital game components like UI, Audio or Level Loading.</p>
+                            <p>As a result, the game features a more maintainable and scalable architecture, allowing for easier integration of new features.</p>
+                            <p>However, reflecting on the experience, I realize that the game would have benefited from implementing Service Locator pattern, to insure coomplete independance of the systems avoiding direct references, which could lead to undpredictable behavior.</p>
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>                 
                             <p>2025</p>    
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Role</h3>

@@ -62,7 +62,12 @@
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>About the project</h3>
                             <p>Doom once revolutionized the genre and set a new standard for video game design.</p>
                             <p>Inspired by the quality of the original Doom, we have decided to recreate similar gameplay, but with a twist: our game will feature procedurally generated levels and multiplayer functionality, developed using Unreal Engine 5.</p>
-                            <p>In this project, my prime focus was on creating procedurally generated interior of the level, post production effects and multiplayer integration. </p>
+                            <p>In this project, my prime focus was on creating procedurally generated interior of the level, post production effects and multiplayer integration.</p>
+                            <p>To achieve a belivable and varied interiors, I have developed a contraint based placement system built on a grid representing the room floor</p>
+                            <p>Each grid cell was classified into placement zones allowing interiors to spawn only in location that matched the rules.</p>
+                            <p>The main challenge was to prevent any clipping or overlapping of assets with each other.</p>
+                            <p>To solve this, every asset had predefined footprint that reserved the grid cells it occupied before placing them.</p>
+                            <p>The interior was genereated in multiple passes with larger object placed first, followed by smaller assets.</p>
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>                 
                             <p>2024</p>    
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Role</h3>
