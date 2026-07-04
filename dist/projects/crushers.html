@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Crushers</title>
     <meta name="description" content="Designed in DrawApp 4.0">
-    <meta property="og:image" content="../assets/img/projects/project1.webp">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-  <script type="module" crossorigin src="../assets/js/background-CSq8V-fA.js"></script>
-  <link rel="stylesheet" crossorigin href="../assets/css/background-CGZPq8oi.css">
+    <meta property="og:image" content="../assets/img/projects/project1.webp">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../assets/css/background.css">
 </head>
 
 <body>
@@ -19,7 +21,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-1 mb-5 mb-md-3">
-                        <div class="col-sm-4"><img class="img-fluid border rounded border-0 shadow-sm mb-4" alt="Profile Image" src="../assets/images/profile-zD3XAmD_.jpg"></div>
+                        <div class="col-sm-4"><img class="img-fluid border rounded border-0 shadow-sm mb-4" alt="Profile Image" src="../assets/img/profile.jpg"></div>
                         <div class="col-sm-8 order-sm-first order-lg-last">
                             <h3 class="fs-5 fw-bold text-primary">Hi! I'm Iskandar</h3>
                             <p>This is my portfolio! Here you'll find info about me and my projects.</p>
@@ -37,6 +39,8 @@
                                 <li class="list-inline-item"><a class="text-reset" href="https://www.linkedin.com/in/iskandarmuminov/"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin fs-5">
                                             <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
                                         </svg></a></li>
+                            </ul>
+                            <a class="btn cv-download-btn" href="../assets/cv/IskandarMuminovGQA.pdf" download>Download CV</a>
                         </div>
                     </div>
                 </div>
@@ -50,17 +54,22 @@
                             <p>Dodge, crush, and outlast your opponents! Ram into other vehicles,
                             use special items, and maneuver skillfully to win the SMASHBASH Tournament!</p>
                             <div class="row gx-2 gy-2 gx-md-2 gy-md-0 mb-5" data-bss-baguettebox="">
-                                <div class="col-md-8"><img class="img-fluid" src="../assets/images/CrushersThumbnail-CiOVHaDC.jpg"></a></div>
+                                <div class="col-md-8"><a href="../assets/img/projects/Crushers/CrushersThumbnail.jpg"><img class="img-fluid" src="../assets/img/projects/Crushers/CrushersThumbnail.jpg"></a></div>
                                 <div class="col">
                                     <div class="row gx-2 gx-md-0 gy-md-2 row-cols-1 row-cols-sm-2 row-cols-md-1">
-                                        <div class="col"><img class="img-fluid" src="../assets/images/hhpAwE-CJnhjo5j.jpg"></a></div>
-                                        <div class="col"><img class="img-fluid" src="../assets/images/JJpcra-f0crF6tc.png"></a></div>
+                                        <div class="col"><a href="../assets/img/projects/Crushers/hhpAwE.jpg"><img class="img-fluid" src="../assets/img/projects/Crushers/hhpAwE.jpg"></a></div>
+                                        <div class="col"><a href="../assets/img/projects/Crushers/JJpcra.png"><img class="img-fluid" src="../assets/img/projects/Crushers/JJpcra.png"></a></div>
                                     </div>
                                 </div>
                             </div>
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>About the project</h3>
-                            <p>Originally started as a university project completed in just two months, this game has become my personal favourite.
-                               <br> My team of passionate game developers and I have decided to continue its development, and more content is coming soon!</p>
+                            <p>CRUSHERS began as a three month challenge to create fun and polished vertical slice of a vehicle combat game. 
+                                As both the Game Designer and Gameplay Programmer, my main goal was to create an experience that felt satisfying from the first minute of play.
+                               <br> One of the biggest challenges was to develop a custom vehicle controller that would feel believable and and responsive for such a fast-paced game.
+                                <br> To achieve this, I have developed a custom car physics script using Unity's wheel colliders.
+                                <br> To support a diverse roster of vehicles, for different types of gameplay, I designed a system using Scriptable Objects, allowing each car's performance and equipment to be tuned independently without changing code.
+                                <br> Among all the extra work, I integrated the vehicle controller with modern Input System building foundation for multiplayer gameplay.
+                                <br> As a result we have created a scalable architecture for a vehicle combat game.</p>
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>                 
                             <p>2024</p>    
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Role</h3>
@@ -87,7 +96,11 @@
             </ul>
             <p class="mb-0">Copyright © 2025 IskandarMuminov</p>
         </div>
-    </footer>
+    </footer>
+    <script src="../assets/bootstrap/js/bootstrap.min.js" type="module"></script>
+    <script src="../assets/js/baguetteBox.min.js" type="module"></script>
+    <script src="../assets/js/template.js" type="module"></script>
+    <script type="module" src="../assets/js/background.js"></script>
 </body>
 
 </html>

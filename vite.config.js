@@ -59,15 +59,19 @@ function copyAssetsPlugin() {
       console.log('Copying additional assets...')
       
       // Copy assets folder recursively
-      if (existsSync('src/assets')) {
-        console.log('Copying src/assets to ../dist/assets')
-        copyDir('src/assets', '../dist/assets')
+      const assetsSrc = resolve(__dirname, 'src/assets')
+      const assetsDest = resolve(__dirname, 'dist/assets')
+      if (existsSync(assetsSrc)) {
+        console.log(`Copying ${assetsSrc} to ${assetsDest}`)
+        copyDir(assetsSrc, assetsDest)
       }
-      
+
       // Copy projects HTML files
-      if (existsSync('src/projects')) {
-        console.log('Copying src/projects to ../dist/projects')
-        copyDir('src/projects', '../dist/projects')
+      const projectsSrc = resolve(__dirname, 'src/projects')
+      const projectsDest = resolve(__dirname, 'dist/projects')
+      if (existsSync(projectsSrc)) {
+        console.log(`Copying ${projectsSrc} to ${projectsDest}`)
+        copyDir(projectsSrc, projectsDest)
       }
     }
   }

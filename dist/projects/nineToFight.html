@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>9ToFight</title>
     <meta name="description" content="Designed in DrawApp 4.0">
-    <meta property="og:image" content="../assets/img/projects/project1.webp">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-  <script type="module" crossorigin src="../assets/js/background-CSq8V-fA.js"></script>
-  <link rel="stylesheet" crossorigin href="../assets/css/background-CGZPq8oi.css">
+    <meta property="og:image" content="../assets/img/projects/project1.webp">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../assets/css/background.css">
 </head>
 
 <body>
@@ -19,7 +21,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-1 mb-5 mb-md-3">
-                        <div class="col-sm-4"><img class="img-fluid border rounded border-0 shadow-sm mb-4" alt="Profile Image" src="../assets/images/profile-zD3XAmD_.jpg"></div>
+                        <div class="col-sm-4"><img class="img-fluid border rounded border-0 shadow-sm mb-4" alt="Profile Image" src="../assets/img/profile.jpg"></div>
                         <div class="col-sm-8 order-sm-first order-lg-last">
                             <h3 class="fs-5 fw-bold text-primary">Hi! I'm Iskandar</h3>
                             <p>This is my portfolio! Here you'll find info about me and my projects.</p>
@@ -37,6 +39,8 @@
                                 <li class="list-inline-item"><a class="text-reset" href="https://www.linkedin.com/in/iskandarmuminov/"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-linkedin fs-5">
                                             <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
                                         </svg></a></li>
+                            </ul>
+                            <a class="btn cv-download-btn" href="../assets/cv/IskandarMuminovGQA.pdf" download>Download CV</a>
                         </div>
                     </div>
                 </div>
@@ -49,11 +53,11 @@
                             <p class="text-muted">Game Design, Unity, C#, Gameplay Programming, Camera Programming</p>
                             <p>Punch, climb, and overthrow the corporate ladder!</p>
                             <div class="row gx-2 gy-2 gx-md-2 gy-md-0 mb-5" data-bss-baguettebox="">
-                                <div class="col-md-8"><a href="assets/images/img/projects/NineToFight/LoadingScreen.png"><img class="img-fluid" src="../assets/images/LoadingScreen-DIgIcIzp.png"></a></div>
+                                <div class="col-md-8"><a href="../assets/img/projects/NineToFight/LoadingScreen.png"><img class="img-fluid" src="../assets/img/projects/NineToFight/LoadingScreen.png"></a></div>
                                 <div class="col">
                                     <div class="row gx-2 gx-md-0 gy-md-2 row-cols-1 row-cols-sm-2 row-cols-md-1">
-                                    <div class="col"><img class="img-fluid" src="../assets/images/OneCamera-Cf64loMv.png"></a></div>
-                                    <div class="col"><img class="img-fluid" src="../assets/images/SplitScreen-B2ervyvh.png"></a></div>
+                                    <div class="col"><a href="../assets/img/projects/NineToFight/OneCamera.png"><img class="img-fluid" src="../assets/img/projects/NineToFight/OneCamera.png"></a></div>
+                                    <div class="col"><a href="../assets/img/projects/NineToFight/SplitScreen.png"><img class="img-fluid" src="../assets/img/projects/NineToFight/SplitScreen.png"></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -61,6 +65,10 @@
                             <p>Take on ex-coworkers, weaponize your surroundings, and embrace the chaos of janky rigidbody physics in NineToFight. Inspired by Gang Beasts and Human: Fall Flat, this multiplayer brawler blends PvE combat with puzzle-solving and parkour challenges. Battle through levels, overcome hilarious physics-driven obstacles, and ultimately steal the crown from your Boss.</p>
                             <p>Originally developed over three months for the UTS subject Game Design Studio 1 and first presented at the UTS Autumn Tech Fest’s Games Showcase, NineToFight will also be showcased at SXSW Sydney 2025, marking an exciting next step for the project.</p>
                             <p>My primary contributions included project management, game design, and gameplay programming.</p>
+                            <p>The biggest challange for me, was to create a system that would connect all game systems together creating a seamless gameplay experience that would immitate players movements across level's in the office building.</p>
+                            <p>To solve this technical challenge, I have decided to use Singleton pattern due to its simplicity paired with Event Bus system to decouple the most vital game components like UI, Audio or Level Loading.</p>
+                            <p>As a result, the game features a more maintainable and scalable architecture, allowing for easier integration of new features.</p>
+                            <p>However, reflecting on the experience, I realize that the game would have benefited from implementing Service Locator pattern, to insure coomplete independance of the systems avoiding direct references, which could lead to undpredictable behavior.</p>
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>                 
                             <p>2025</p>    
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Role</h3>
@@ -87,7 +95,11 @@
             </ul>
             <p class="mb-0">Copyright © 2025 IskandarMuminov</p>
         </div>
-    </footer>
+    </footer>
+    <script src="../assets/bootstrap/js/bootstrap.min.js" type="module"></script>
+    <script src="../assets/js/baguetteBox.min.js" type="module"></script>
+    <script src="../assets/js/template.js" type="module"></script>
+    <script type="module" src="../assets/js/background.js"></script>
 </body>
 
 </html>
