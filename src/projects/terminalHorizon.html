@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>9ToFight</title>
-    <meta name="description" content="Designed in DrawApp 4.0">
-    <meta property="og:image" content="../assets/img/projects/project1.webp">
+    <title>Terminal Horizon</title>
+    <meta name="description" content="Terminal Horizon - a game by Iskandar Muminov">
+    <meta property="og:image" content="../assets/img/projects/TerminalHorizon/terminalHorizonheader.jpg">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
@@ -49,43 +49,55 @@
                         <div class="col"><a class="fw-bold link-primary d-flex align-items-center mb-3 text-decoration-none" href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-left-short me-1">
                                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"></path>
                                 </svg>Back</a>
-                            <h1 class="fs-3 fw-bold">9ToFight</h1>
-                            <p class="text-muted">Game Design, Unity, C#, Gameplay Programming, Camera Programming</p>
-                            <p>Punch, climb, and overthrow the corporate ladder!</p>
-                            <div class="row gx-2 gy-2 gx-md-2 gy-md-0 mb-5" data-bss-baguettebox="">
-                                <div class="col-md-8"><a href="../assets/img/projects/NineToFight/LoadingScreen.png"><img class="img-fluid" src="../assets/img/projects/NineToFight/LoadingScreen.png"></a></div>
-                                <div class="col">
-                                    <div class="row gx-2 gx-md-0 gy-md-2 row-cols-1 row-cols-sm-2 row-cols-md-1">
-                                    <div class="col"><a href="../assets/img/projects/NineToFight/OneCamera.png"><img class="img-fluid" src="../assets/img/projects/NineToFight/OneCamera.png"></a></div>
-                                    <div class="col"><a href="../assets/img/projects/NineToFight/SplitScreen.png"><img class="img-fluid" src="../assets/img/projects/NineToFight/SplitScreen.png"></a></div>
-                                    </div>
-                                </div>
+                            <h1 class="fs-3 fw-bold">Terminal Horizon</h1>
+                            <p class="text-muted">Cyberpunk Turn-Based Tactics Roguelike, Unity, C#, QA Engineering</p>
+                            <p>Lead a group of awakened simulants in their escape from New Damascus, and grant them
+                            their dying wish to see the stars in this cyberpunk turn-based tactics roguelike. Fight
+                            against hostile simulants and combine powerful abilities with 100+ unique items to create
+                            devastating, game-breaking builds.</p>
+
+                            <div class="row gx-2 gy-2 mb-5" data-bss-baguettebox="">
+                                <div class="col-md-6"><a href="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay.jpg"><img class="img-fluid" src="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay.jpg"></a></div>
+                                <div class="col-md-6"><a href="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay2.jpg"><img class="img-fluid" src="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay2.jpg"></a></div>
                             </div>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>About the project</h3>
-                            <p>Take on ex-coworkers, weaponize your surroundings, and embrace the chaos of janky rigidbody physics in NineToFight. Inspired by Gang Beasts and Human: Fall Flat, this multiplayer brawler blends PvE combat with puzzle-solving and parkour challenges. Battle through levels, overcome hilarious physics-driven obstacles, and ultimately steal the crown from your Boss.</p>
-                            <p>Originally developed over three months for the UTS subject Game Design Studio 1 and first presented at the UTS Autumn Tech Fest’s Games Showcase, NineToFight will also be showcased at SXSW Sydney 2025, marking an exciting next step for the project.</p>
-                            <p>My primary contributions included project management, game design, and gameplay programming.</p>
-                            <p>The biggest challange for me, was to create a system that would connect all game systems together creating a seamless gameplay experience that would immitate players movements across level's in the office building.</p>
-                            <p>To solve this technical challenge, I have decided to use Singleton pattern due to its simplicity paired with Event Bus system to decouple the most vital game components like UI, Audio or Level Loading.</p>
-                            <p>As a result, the game features a more maintainable and scalable architecture, allowing for easier integration of new features.</p>
-                            <p>However, reflecting on the experience, I realize that the game would have benefited from implementing Service Locator pattern, to insure coomplete independance of the systems avoiding direct references, which could lead to undpredictable behavior.</p>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>                 
-                            <p>2025</p>    
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Role</h3>
+
+                            <h3 class="fs-4 fw-bold mb-4" id="section-about"><a class="link-primary me-2">#</a>About the project</h3>
+                            <p>I contribute to Terminal Horizon as a volunteer, working alongside full-time
+                                employment out of genuine passion for game development.
+                                <br><br> I develop C#/.NET developer tools for Unity, including a customisable
+                                in-game developer console built around a command pattern, where every debug and
+                                test action implements a shared command interface. This let me to add new
+                                commands without touching core systems, and with autocomplete and input suggestions
+                                layered on top, testers could discover and run commands quickly. The console is now
+                                used across the team for QA and has significantly cut down testing time.
+                                <br><br> I developed and maintain a suite of over 100 unit tests covering core
+                                gameplay features on a commercial Steam title, catching regressions before they
+                                reached builds and improving the efficiency of QA.
+                                <br><br> I implemented game UI using an MVC architecture in the gameplay code, keeping
+                                views separate from underlying game state and logic. This separation of
+                                responsibilities and dependencies kept systems testable and modular, and made UI
+                                features easier to extend without breaking other parts of the game.
+                                <br><br> As a result, automated unit tests now catch regressions in core gameplay
+                                features before they reach builds, the developer console is used across the QA and
+                                development teams, and the project has remained on schedule for its Steam release.</p>
+
+                            <h3 class="fs-4 fw-bold mb-4" id="section-year"><a class="link-primary me-2">#</a>Year</h3>
+                            <p>2026</p>
+
+                            <h3 class="fs-4 fw-bold mb-4" id="section-role"><a class="link-primary me-2">#</a>Role</h3>
                             <ul>
-                                <li>Game Designer</li>
-                                <li>Gameplay Programmer</li>
-                                <li>Project Manager</li>
+                                <li>QA Engineer (Volunteer)</li>
+                                <li>Gameplay & Tools Programmer</li>
+                                <li>UI Programmer</li>
                             </ul>
 
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Collaborators</h3>
-                            <p>Ellie Song, Belida Ouch, Suhyun Jeon, Angelina Lowe</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-collaborators"><a class="link-primary me-2">#</a>Collaborators</h3>
+                            <p>Part of a 40+ person development team spanning programming, design, art, and production.</p>
                             <div class="d-grid mt-3">
-                                <a class="btn btn-lg btn-primary-dragient" role="button" href="https://rkrwk.itch.io/9tofight">See the project</a>
+                                <a class="btn btn-lg btn-primary-dragient" role="button" href="https://store.steampowered.com/app/4358600/Terminal_Horizon/">See the project</a>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
