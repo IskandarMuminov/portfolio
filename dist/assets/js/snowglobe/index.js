@@ -52,7 +52,7 @@ const sizes = {
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 // Head-on in front of the globe, slightly above its center, at roughly the
 // same distance as the previous raised three-quarter view.
-camera.position.set(0, 1.5, 8)
+camera.position.set(7, 1, 5)
 
 /**
  * Renderer
@@ -173,7 +173,7 @@ Forest.populate({ obstacles: [house, snowMan], container: glassMesh })
 // individual Mesh objects, so this is one draw call instead of a thousand.
 const snowflakeGeometry = new THREE.BoxGeometry(0.05, 0.05, 0.05)
 const snowflakeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff })
-const numParticles = 100
+const numParticles = 500
 const globeRadius = 2.9
 const snowParticles = new THREE.InstancedMesh(snowflakeGeometry, snowflakeMaterial, numParticles)
 const snowflakePositions = new Float32Array(numParticles * 3)

@@ -60,8 +60,11 @@
 
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Live Demo</h3>
                             <p>Drag to orbit, scroll to zoom. Use the panel in the corner to tweak the glass material, trigger a shake to swirl up snow, or control the music.</p>
-                            <div class="ratio mb-5 border rounded" style="max-width: 80%; max">
-                                <iframe src="../snowglobeDemo.html" title="Snow Globe Demo" loading="lazy"></iframe>
+                            <!-- Size the demo here: width fills the column, height is 70% of the
+                                 viewport. A plain "height: 70%" would collapse, since none of the
+                                 ancestors have a fixed height for it to resolve against. -->
+                            <div class="mb-5 border rounded overflow-hidden" style="width: 100%; height: 70vh;">
+                                <iframe src="../snowglobeDemo.html" title="Snow Globe Demo" loading="lazy" style="width: 100%; height: 100%; border: 0; display: block;"></iframe>
                             </div>
 
                             <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>

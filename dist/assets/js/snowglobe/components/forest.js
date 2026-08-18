@@ -78,7 +78,7 @@ class Trees extends Group {
     noTreeField = 0.25,
     // Per-tree size range. Smaller trees need less room, so a wider range
     // also lets more of them fit.
-    minScale = 0.45,
+    minScale = 0.8,
     maxScale = 1.2,
     // Extra breathing room around obstacles, on top of each tree's own
     // canopy radius. 0 means a canopy may sit right up against the house.
