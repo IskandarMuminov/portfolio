@@ -116,7 +116,11 @@ function getHtmlInputs() {
   
   // Main index.html
   htmlFiles['index'] = resolve(__dirname, 'src/index.html')
-  
+
+  // Standalone Three.js demo pages, bundled like index.html (not raw-copied
+  // like src/projects/*.html, since they need their npm imports resolved)
+  htmlFiles['snowglobeDemo'] = resolve(__dirname, 'src/snowglobeDemo.html')
+
   // Project HTML files
   const projectsDir = resolve(__dirname, 'src/projects')
   if (existsSync(projectsDir)) {
