@@ -20,7 +20,7 @@ const snowpng = [png1, png2, png3, png4, png5];
 // Snowfalls gets scaled down by 0.005 in index.js (same convention as the
 // house/forest/snowman), so 580 here lands at ~2.9 world units — matching
 // the glass globe's radius.
-const GLOBE_RADIUS = 580;
+const GLOBE_RADIUS = 500;
 
 // Uniform random point inside a sphere: cube-root the radius so density
 // stays even by volume instead of clumping toward the center.
