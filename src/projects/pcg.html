@@ -9,6 +9,7 @@
     <meta property="og:image" content="../assets/img/projects/project1.webp">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/splide.min.css">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
     <link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
     <link rel="stylesheet" href="../assets/css/background.css">
@@ -50,34 +51,53 @@
                                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"></path>
                                 </svg>Back</a>
                             <h1 class="fs-3 fw-bold">PCG in Unreal Engine 5</h1>
-                            <p class="text-muted">UE5, C++, PCG</p>
+                            <p class="text-muted">PCG, C++, UE5</p>
                             <p>Procedurally generated dungeon made in Unreal Engine 5</p>
-                            <div class="row gx-2 gy-2 gx-md-2 gy-md-0 mb-5" data-bss-baguettebox="">
-                                <div class="col-md-8"><a href="../assets/img/projects/PGD/DungeonUpView.jpg"><img class="img-fluid" src="../assets/img/projects/PGD/DungeonUpView.jpg"></a></div>
-                                <div class="col">
-                                    <div class="row gx-2 gx-md-0 gy-md-2 row-cols-1 row-cols-sm-2 row-cols-md-1">
-                                    <div class="col"><a href="../assets/img/projects/PGD/Multiplayer.jpg"><img class="img-fluid" src="../assets/img/projects/PGD/Multiplayer.jpg"></a></div>
-                                    <div class="col"><a href="../assets/img/projects/PGD/Dungeon.png"><img class="img-fluid" src="../assets/img/projects/PGD/Dungeon.png"></a></div>
-                                    </div>
+                            <section class="splide project-carousel mb-5" aria-label="PCG in Unreal Engine 5 screenshots" data-bss-baguettebox="">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="splide__slide"><a href="../assets/img/projects/PGD/DungeonUpView.jpg"><img src="../assets/img/projects/PGD/DungeonUpView.jpg" alt="PCG in Unreal Engine 5 screenshot 1"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/PGD/Multiplayer.jpg"><img src="../assets/img/projects/PGD/Multiplayer.jpg" alt="PCG in Unreal Engine 5 screenshot 2"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/PGD/Dungeon.png"><img src="../assets/img/projects/PGD/Dungeon.png" alt="PCG in Unreal Engine 5 screenshot 3"></a></li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>About the project</h3>
-                            <p>Doom once revolutionized the genre and set a new standard for video game design.</p>
-                            <p>Inspired by the quality of the original Doom, we have decided to recreate similar gameplay, but with a twist: our game will feature procedurally generated levels and multiplayer functionality, developed using Unreal Engine 5.</p>
-                            <p>In this project, my prime focus was on creating procedurally generated interior of the level, post production effects and multiplayer integration.</p>
-                            <p>To achieve a belivable and varied interiors, I have developed a contraint based placement system built on a grid representing the room floor</p>
-                            <p>Each grid cell was classified into placement zones allowing interiors to spawn only in location that matched the rules.</p>
-                            <p>The main challenge was to prevent any clipping or overlapping of assets with each other.</p>
-                            <p>To solve this, every asset had predefined footprint that reserved the grid cells it occupied before placing them.</p>
-                            <p>The interior was genereated in multiple passes with larger object placed first, followed by smaller assets.</p>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>                 
+                            </section>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-overview"><a class="link-primary me-2">#</a>Overview</h3>
+                            <p>Inspired by the original Doom, we recreated its style of gameplay with a twist: procedurally generated levels and multiplayer, built in Unreal Engine 5.</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-contributions"><a class="link-primary me-2">#</a>My contributions</h3>
+                            <ul>
+                                <li>Procedural generation of level interiors</li>
+                                <li>Post-processing effects</li>
+                                <li>Multiplayer integration</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-tools"><a class="link-primary me-2">#</a>Tools</h3>
+                            <ul class="tool-list">
+                                <li>Unreal Engine 5</li>
+                                <li>C++</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-challenges"><a class="link-primary me-2">#</a>Challenges</h3>
+                            <h4 class="fs-6 fw-bold mb-2">Believable interiors without clipping</h4>
+                            <p>Generated rooms needed to look believable and varied, without any assets clipping into or overlapping each other. I built a constraint-based placement system:</p>
+                            <ul>
+                                <li>The room floor is represented as a grid</li>
+                                <li>Each grid cell is classified into placement zones, so assets only spawn where they match the rules</li>
+                                <li>Every asset has a predefined footprint that reserves its grid cells before it is placed</li>
+                                <li>Interiors are generated in multiple passes: larger objects first, then smaller assets</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-results"><a class="link-primary me-2">#</a>Results</h3>
+                            <ul>
+                                <li>Every generated room is different, and props never clip or overlap</li>
+                                <li>Procedural levels combined with multiplayer, so every playthrough with friends is different</li>
+                            </ul>
+
+                            <h3 class="fs-4 fw-bold mb-4" id="section-year"><a class="link-primary me-2">#</a>Year</h3>
                             <p>2024</p>    
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Role</h3>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-role"><a class="link-primary me-2">#</a>Role</h3>
                             <ul>
                                 <li>Programmer</li>
                             </ul>
 
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Collaborators</h3>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-collaborators"><a class="link-primary me-2">#</a>Collaborators</h3>
                             <p>Ellie Song.</p>
                             <div class="d-grid mt-3">
                                 <a class="btn btn-lg btn-primary-dragient" role="button" href="https://youtu.be/GDmR3YUhfzA?si=WNR39MXOXBE3tg6i">See the project</a>
@@ -100,6 +120,8 @@
     <script src="../assets/bootstrap/js/bootstrap.min.js" type="module"></script>
     <script src="../assets/js/baguetteBox.min.js" type="module"></script>
     <script src="../assets/js/template.js" type="module"></script>
+    <script src="../assets/js/splide.min.js"></script>
+    <script src="../assets/js/carousel.js"></script>
     <script type="module" src="../assets/js/background.js"></script>
 </body>
 

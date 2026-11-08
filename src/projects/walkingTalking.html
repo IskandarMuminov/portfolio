@@ -9,6 +9,7 @@
     <meta property="og:image" content="../assets/img/projects/project1.webp">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/splide.min.css">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
     <link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
     <link rel="stylesheet" href="../assets/css/background.css">
@@ -50,34 +51,53 @@
                                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"></path>
                                 </svg>Back</a>
                             <h1 class="fs-3 fw-bold">Walking Talking</h1>
-                            <p class="text-muted">Game Design, Unity, C#, Serious Games</p>
+                            <p class="text-muted">Gameplay Programming, C#, Unity, Game Design, Level Design, Serious Games</p>
                             <p>"WalkingTalking", a serious mobile game designed for children with articulation speech disorder.</p>
-                            <div class="row gx-2 gy-2 gx-md-2 gy-md-0 mb-5" data-bss-baguettebox="">
-                                <div class="col-md-8"><a href="../assets/img/projects/WalkingTalking/GameInteraction2.jpg"><img class="img-fluid" src="../assets/img/projects/WalkingTalking/GameInteraction2.jpg"></a></div>
-                                <div class="col">
-                                    <div class="row gx-2 gx-md-0 gy-md-2 row-cols-1 row-cols-sm-2 row-cols-md-1">
-                                    <div class="col"><a href="../assets/img/projects/WalkingTalking/CardChoice.jpg"><img class="img-fluid" src="../assets/img/projects/WalkingTalking/CardChoice.jpg"></a></div>
-                                    <div class="col"><a href="../assets/img/projects/WalkingTalking/GameInteractionVoiceRec.jpg"><img class="img-fluid" src="../assets/img/projects/WalkingTalking/GameInteractionVoiceRec.jpg"></a></div>
-                                    </div>
+                            <section class="splide project-carousel mb-5" aria-label="Walking Talking screenshots" data-bss-baguettebox="">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="splide__slide"><a href="../assets/img/projects/WalkingTalking/GameInteraction2.jpg"><img src="../assets/img/projects/WalkingTalking/GameInteraction2.jpg" alt="Walking Talking screenshot 1"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/WalkingTalking/CardChoice.jpg"><img src="../assets/img/projects/WalkingTalking/CardChoice.jpg" alt="Walking Talking screenshot 2"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/WalkingTalking/GameInteractionVoiceRec.jpg"><img src="../assets/img/projects/WalkingTalking/GameInteractionVoiceRec.jpg" alt="Walking Talking screenshot 3"></a></li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>About the project</h3>
-                            <p>Developed using Unity3D, the game utilises engaging mechanics and speech recognition technology, along with commonly used exercises, to provide speech therapy in an accessible and gamified format.</p>
-                            <p>I thoroughly enjoyed working on this game, not only because it provided a great opportunity to implement new mechanics, such as a voice recognition feature and a card picking system, but also because I see significant potential in similar games and their benefits to society.</p>
-                            <p>In this project, my prime focus was on implementing voice recognition system along with the card selection system. Silly sprites were also drawn by me (I know, I have great talent).</p>
-                            <p>The challenge was in adapting existing voice recognition system that would support therapy goals, rather than just recognizing words.</p>
-                            <p>Instead of relying on exact word matches, I have implemented a weighted pronunciation matching system that evaluates the similarity between the recognised speech and the target word.</p>
-                            <p>This approach allowed more flexible pronunciation variations, while encouraging improvement with a difficulty modifier that adjusts the matching criteria based on the player's performance.</p>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>                 
-                            <p>2024</p>    
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Role</h3>
+                            </section>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-overview"><a class="link-primary me-2">#</a>Overview</h3>
+                            <p>Built in Unity, the game combines engaging mechanics, speech recognition and commonly used exercises to provide speech therapy in an accessible, gamified format.</p>
+                            <p>I thoroughly enjoyed this project: it let me build new mechanics, and I see significant potential in games like this and their benefits to society.</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-contributions"><a class="link-primary me-2">#</a>My contributions</h3>
                             <ul>
-                                <li>Game Designer</li>
+                                <li>Voice recognition system</li>
+                                <li>Card selection system</li>
+                                <li>Drew the silly sprites (I know, I have great talent)</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-tools"><a class="link-primary me-2">#</a>Tools</h3>
+                            <ul class="tool-list">
+                                <li>Unity</li>
+                                <li>C#</li>
+                                <li>Unity Speech (KeywordRecognizer)</li>
+                                <li>GitHub</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-challenges"><a class="link-primary me-2">#</a>Challenges</h3>
+                            <h4 class="fs-6 fw-bold mb-2">Recognition that supports therapy, not just words</h4>
+                            <p>An existing voice recognition system only tells you whether a word was recognised. For therapy, it needed to reward progress.</p>
+                            <p>Instead of relying on exact word matches, I implemented a weighted pronunciation matching system that scores how similar the recognised speech is to the target word. A difficulty modifier adjusts the matching criteria based on the player's performance.</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-results"><a class="link-primary me-2">#</a>Results</h3>
+                            <ul>
+                                <li>Accepts natural pronunciation variations, so children are not stuck on near-misses</li>
+                                <li>The difficulty adapts to each player's performance, encouraging improvement over time</li>
+                            </ul>
+
+                            <h3 class="fs-4 fw-bold mb-4" id="section-year"><a class="link-primary me-2">#</a>Year</h3>
+                            <p>2024</p>    
+                            <h3 class="fs-4 fw-bold mb-4" id="section-role"><a class="link-primary me-2">#</a>Role</h3>
+                            <ul>
                                 <li>Gameplay Programmer</li>
+                                <li>Game Designer</li>
                                 <li>Level Designer</li>
                             </ul>
 
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Collaborators</h3>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-collaborators"><a class="link-primary me-2">#</a>Collaborators</h3>
                             <p>Iskandar Muminov</p>
                             <div class="d-grid mt-3">
                                 <a class="btn btn-lg btn-primary-dragient" role="button" href="https://github.com/IskandarMuminov/SeriousGames">See the project</a>
@@ -100,6 +120,8 @@
     <script src="../assets/bootstrap/js/bootstrap.min.js" type="module"></script>
     <script src="../assets/js/baguetteBox.min.js" type="module"></script>
     <script src="../assets/js/template.js" type="module"></script>
+    <script src="../assets/js/splide.min.js"></script>
+    <script src="../assets/js/carousel.js"></script>
     <script type="module" src="../assets/js/background.js"></script>
 </body>
 

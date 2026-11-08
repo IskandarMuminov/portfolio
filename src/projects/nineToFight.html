@@ -9,6 +9,7 @@
     <meta property="og:image" content="../assets/img/projects/project1.webp">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/splide.min.css">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
     <link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
     <link rel="stylesheet" href="../assets/css/background.css">
@@ -50,37 +51,63 @@
                                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"></path>
                                 </svg>Back</a>
                             <h1 class="fs-3 fw-bold">9ToFight</h1>
-                            <p class="text-muted">Game Design, Unity, C#, Gameplay Programming, Camera Programming</p>
+                            <p class="text-muted">Game Architecture Programming, Active Ragdoll Physics, Gameplay Programming, Camera Programming, C#, Unity, Unity Physics, Game Design</p>
                             <p>Punch, climb, and overthrow the corporate ladder!</p>
-                            <div class="row gx-2 gy-2 gx-md-2 gy-md-0 mb-5" data-bss-baguettebox="">
-                                <div class="col-md-8"><a href="../assets/img/projects/NineToFight/LoadingScreen.png"><img class="img-fluid" src="../assets/img/projects/NineToFight/LoadingScreen.png"></a></div>
-                                <div class="col">
-                                    <div class="row gx-2 gx-md-0 gy-md-2 row-cols-1 row-cols-sm-2 row-cols-md-1">
-                                    <div class="col"><a href="../assets/img/projects/NineToFight/OneCamera.png"><img class="img-fluid" src="../assets/img/projects/NineToFight/OneCamera.png"></a></div>
-                                    <div class="col"><a href="../assets/img/projects/NineToFight/SplitScreen.png"><img class="img-fluid" src="../assets/img/projects/NineToFight/SplitScreen.png"></a></div>
-                                    </div>
+                            <section class="splide project-carousel mb-5" aria-label="9ToFight screenshots" data-bss-baguettebox="">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="splide__slide"><a href="../assets/img/projects/NineToFight/boss%20meteor2.png"><img src="../assets/img/projects/NineToFight/boss%20meteor2.png" alt="9ToFight boss fight with meteors exploding across the office"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/NineToFight/boss%20battle.png"><img src="../assets/img/projects/NineToFight/boss%20battle.png" alt="9ToFight player brawling with the boss in his office"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/NineToFight/Level.png"><img src="../assets/img/projects/NineToFight/Level.png" alt="9ToFight office level with knocked-out coworkers"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/NineToFight/Level2.png"><img src="../assets/img/projects/NineToFight/Level2.png" alt="9ToFight level 2 office floor full of coworkers"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/NineToFight/boss%20fight.png"><img src="../assets/img/projects/NineToFight/boss%20fight.png" alt="9ToFight walking up to the boss's office"></a></li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>About the project</h3>
-                            <p>Take on ex-coworkers, weaponize your surroundings, and embrace the chaos of janky rigidbody physics in NineToFight. Inspired by Gang Beasts and Human: Fall Flat, this multiplayer brawler blends PvE combat with puzzle-solving and parkour challenges. Battle through levels, overcome hilarious physics-driven obstacles, and ultimately steal the crown from your Boss.</p>
-                            <p>Originally developed over three months for the UTS subject Game Design Studio 1 and first presented at the UTS Autumn Tech Fest’s Games Showcase, NineToFight will also be showcased at SXSW Sydney 2025, marking an exciting next step for the project.</p>
-                            <p>My primary contributions included project management, game design, and gameplay programming.</p>
-                            <p>The biggest challange for me, was to create a system that would connect all game systems together creating a seamless gameplay experience that would immitate players movements across level's in the office building.</p>
-                            <p>To solve this technical challenge, I have decided to use Singleton pattern due to its simplicity paired with Event Bus system to decouple the most vital game components like UI, Audio or Level Loading.</p>
-                            <p>As a result, the game features a more maintainable and scalable architecture, allowing for easier integration of new features.</p>
-                            <p>However, reflecting on the experience, I realize that the game would have benefited from implementing Service Locator pattern, to insure coomplete independance of the systems avoiding direct references, which could lead to undpredictable behavior.</p>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>                 
-                            <p>2025</p>    
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Role</h3>
+                            </section>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-overview"><a class="link-primary me-2">#</a>Overview</h3>
+                            <p>Inspired by Gang Beasts and Human: Fall Flat, this multiplayer brawler blends PvE combat with ragdoll chaos. Battle through levels, overcome hilarious physics-driven obstacles, and ultimately steal the crown from your Boss.</p>
+                            <p>Developed over three months for the UTS subject Game Design Studio 1. First presented at the UTS Autumn Tech Fest's Games Showcase, and later showcased at SXSW Sydney 2025.</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-contributions"><a class="link-primary me-2">#</a>My contributions</h3>
                             <ul>
-                                <li>Game Designer</li>
+                                <li>Game architecture</li>
+                                <li>Active ragdoll physics programming</li>
+                                <li>Technical and game design</li>
+                                <li>Led the project: ran regular team meetings and maintained the game design document</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-tools"><a class="link-primary me-2">#</a>Tools</h3>
+                            <ul class="tool-list">
+                                <li>Unity</li>
+                                <li>C#</li>
+                                <li>Unity Physics</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-challenges"><a class="link-primary me-2">#</a>Challenges</h3>
+                            <h4 class="fs-6 fw-bold mb-2">Connecting every system</h4>
+                            <p>The game's systems all had to work together so players move seamlessly through the levels of the office building.</p>
+                            <p>I chose the Service Locator pattern over Singletons, despite its added complexity, and paired it with an Event Bus. This keeps the systems completely independent and avoids direct references, which can lead to unpredictable behaviour.</p>
+                            <h4 class="fs-6 fw-bold mb-2">An active ragdoll that's fun to play and easy to manage</h4>
+                            <p>There were very few resources on active ragdolls at the time, since the mechanic is quite underappreciated.</p>
+                            <p>I used a two-character method: one animated character, and an active ragdoll that copies its movement within physics constraints.</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-results"><a class="link-primary me-2">#</a>Results</h3>
+                            <ul>
+                                <li>A maintainable, scalable architecture that makes new features easier to add</li>
+                                <li>A fun ragdoll character that's easy to update</li>
+                                <li>Kept the team aligned through regular meetings and an up-to-date game design document</li>
+                                <li>Showcased at the UTS Autumn Tech Fest and SXSW Sydney 2025</li>
+                            </ul>
+
+                            <h3 class="fs-4 fw-bold mb-4" id="section-year"><a class="link-primary me-2">#</a>Year</h3>
+                            <p>2025</p>    
+                            <h3 class="fs-4 fw-bold mb-4" id="section-role"><a class="link-primary me-2">#</a>Role</h3>
+                            <ul>
                                 <li>Gameplay Programmer</li>
+                                <li>Game Designer</li>
                                 <li>Project Manager</li>
                             </ul>
 
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Collaborators</h3>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-collaborators"><a class="link-primary me-2">#</a>Collaborators</h3>
                             <p>Ellie Song, Belida Ouch, Suhyun Jeon, Angelina Lowe</p>
-                            <div class="d-grid mt-3">
+                            <div class="d-grid gap-2 mt-3">
+                                <a class="btn btn-lg btn-primary-dragient" role="button" href="https://youtu.be/XHIjwjp9878">Watch the trailer</a>
                                 <a class="btn btn-lg btn-primary-dragient" role="button" href="https://rkrwk.itch.io/9tofight">See the project</a>
                             </div>
                         </div>
@@ -101,6 +128,8 @@
     <script src="../assets/bootstrap/js/bootstrap.min.js" type="module"></script>
     <script src="../assets/js/baguetteBox.min.js" type="module"></script>
     <script src="../assets/js/template.js" type="module"></script>
+    <script src="../assets/js/splide.min.js"></script>
+    <script src="../assets/js/carousel.js"></script>
     <script type="module" src="../assets/js/background.js"></script>
 </body>
 

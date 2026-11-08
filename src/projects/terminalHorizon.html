@@ -9,6 +9,7 @@
     <meta property="og:image" content="../assets/img/projects/TerminalHorizon/terminalHorizonheader.jpg">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/splide.min.css">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
     <link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
     <link rel="stylesheet" href="../assets/css/background.css">
@@ -50,45 +51,57 @@
                                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"></path>
                                 </svg>Back</a>
                             <h1 class="fs-3 fw-bold">Terminal Horizon</h1>
-                            <p class="text-muted">Cyberpunk Turn-Based Tactics Roguelike, Unity, C#, QA Engineering</p>
+                            <p class="text-muted">Tools Programming, Gameplay Programming, UI Programming, C#, Unity, QA Engineering, Cyberpunk Turn-Based Tactics Roguelike</p>
                             <p>Lead a group of awakened simulants in their escape from New Damascus, and grant them
                             their dying wish to see the stars in this cyberpunk turn-based tactics roguelike. Fight
                             against hostile simulants and combine powerful abilities with 100+ unique items to create
                             devastating, game-breaking builds.</p>
 
-                            <div class="row gx-2 gy-2 mb-5" data-bss-baguettebox="">
-                                <div class="col-md-6"><a href="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay.jpg"><img class="img-fluid" src="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay.jpg"></a></div>
-                                <div class="col-md-6"><a href="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay2.jpg"><img class="img-fluid" src="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay2.jpg"></a></div>
-                            </div>
-
-                            <h3 class="fs-4 fw-bold mb-4" id="section-about"><a class="link-primary me-2">#</a>About the project</h3>
-                            <p>I contribute to Terminal Horizon as a volunteer, working alongside full-time
-                                employment out of genuine passion for game development.
-                                <br><br> I develop C#/.NET developer tools for Unity, including a customisable
-                                in-game developer console built around a command pattern, where every debug and
-                                test action implements a shared command interface. This let me to add new
-                                commands without touching core systems, and with autocomplete and input suggestions
-                                layered on top, testers could discover and run commands quickly. The console is now
-                                used across the team for QA and has significantly cut down testing time.
-                                <br><br> I developed and maintain a suite of over 100 unit tests covering core
-                                gameplay features on a commercial Steam title, catching regressions before they
-                                reached builds and improving the efficiency of QA.
-                                <br><br> I implemented game UI using an MVC architecture in the gameplay code, keeping
-                                views separate from underlying game state and logic. This separation of
-                                responsibilities and dependencies kept systems testable and modular, and made UI
-                                features easier to extend without breaking other parts of the game.
-                                <br><br> As a result, automated unit tests now catch regressions in core gameplay
-                                features before they reach builds, the developer console is used across the QA and
-                                development teams, and the project has remained on schedule for its Steam release.</p>
+                            <section class="splide project-carousel mb-5" aria-label="Terminal Horizon screenshots" data-bss-baguettebox="">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="splide__slide"><a href="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay.jpg"><img src="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay.jpg" alt="Terminal Horizon screenshot 1"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay2.jpg"><img src="../assets/img/projects/TerminalHorizon/terminalHorizonGameplay2.jpg" alt="Terminal Horizon screenshot 2"></a></li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-overview"><a class="link-primary me-2">#</a>Overview</h3>
+                            <p>I contribute to Terminal Horizon as a volunteer, alongside full-time employment, out of genuine passion for game development.</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-contributions"><a class="link-primary me-2">#</a>My contributions</h3>
+                            <ul>
+                                <li><strong>Developer console:</strong> a customisable in-game console for Unity, written in C#/.NET</li>
+                                <li><strong>Unit tests:</strong> a suite of 100+ unit tests covering core gameplay features of a commercial Steam title, which I developed and maintain</li>
+                                <li><strong>Game UI:</strong> implemented with an MVC architecture in the gameplay code</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-tools"><a class="link-primary me-2">#</a>Tools</h3>
+                            <ul class="tool-list">
+                                <li>Unity</li>
+                                <li>C#</li>
+                                <li>.NET</li>
+                                <li>Steam</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-challenges"><a class="link-primary me-2">#</a>Challenges</h3>
+                            <h4 class="fs-6 fw-bold mb-2">Making debug tools easy to extend</h4>
+                            <p>The console is built around the command pattern: every debug and test action implements a shared command interface, so new commands can be added without touching core systems.</p>
+                            <p>Autocomplete and input suggestions on top let testers discover and run commands quickly.</p>
+                            <h4 class="fs-6 fw-bold mb-2">Keeping UI from breaking the game</h4>
+                            <p>MVC keeps views separate from the underlying game state and logic. This separation kept systems testable and modular, and made UI features easier to extend without breaking other parts of the game.</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-results"><a class="link-primary me-2">#</a>Results</h3>
+                            <ul>
+                                <li>The developer console is used across the QA and development teams and has significantly cut down testing time</li>
+                                <li>Unit tests catch regressions in core gameplay features before they reach builds</li>
+                                <li>UI features can be extended without breaking other parts of the game</li>
+                                <li>The project has remained on schedule for its Steam release</li>
+                            </ul>
 
                             <h3 class="fs-4 fw-bold mb-4" id="section-year"><a class="link-primary me-2">#</a>Year</h3>
                             <p>2026</p>
 
                             <h3 class="fs-4 fw-bold mb-4" id="section-role"><a class="link-primary me-2">#</a>Role</h3>
                             <ul>
-                                <li>QA Engineer (Volunteer)</li>
                                 <li>Gameplay & Tools Programmer</li>
                                 <li>UI Programmer</li>
+                                <li>QA Engineer (Volunteer)</li>
                             </ul>
 
                             <h3 class="fs-4 fw-bold mb-4" id="section-collaborators"><a class="link-primary me-2">#</a>Collaborators</h3>
@@ -113,6 +126,8 @@
     <script src="../assets/bootstrap/js/bootstrap.min.js" type="module"></script>
     <script src="../assets/js/baguetteBox.min.js" type="module"></script>
     <script src="../assets/js/template.js" type="module"></script>
+    <script src="../assets/js/splide.min.js"></script>
+    <script src="../assets/js/carousel.js"></script>
     <script type="module" src="../assets/js/background.js"></script>
 </body>
 

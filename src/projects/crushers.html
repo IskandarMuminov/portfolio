@@ -9,6 +9,7 @@
     <meta property="og:image" content="../assets/img/projects/project1.webp">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Azeret+Mono:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/splide.min.css">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
     <link rel="stylesheet" href="../assets/css/baguetteBox.min.css">
     <link rel="stylesheet" href="../assets/css/background.css">
@@ -50,36 +51,57 @@
                                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"></path>
                                 </svg>Back</a>
                             <h1 class="fs-3 fw-bold">Crushers</h1>
-                            <p class="text-muted">Game Design, Unity, C#, Car Physics Programming</p>
+                            <p class="text-muted">Car Physics Programming, Gameplay Programming, C#, Unity, Game Design</p>
                             <p>Dodge, crush, and outlast your opponents! Ram into other vehicles,
                             use special items, and maneuver skillfully to win the SMASHBASH Tournament!</p>
-                            <div class="row gx-2 gy-2 gx-md-2 gy-md-0 mb-5" data-bss-baguettebox="">
-                                <div class="col-md-8"><a href="../assets/img/projects/Crushers/CrushersThumbnail.jpg"><img class="img-fluid" src="../assets/img/projects/Crushers/CrushersThumbnail.jpg"></a></div>
-                                <div class="col">
-                                    <div class="row gx-2 gx-md-0 gy-md-2 row-cols-1 row-cols-sm-2 row-cols-md-1">
-                                        <div class="col"><a href="../assets/img/projects/Crushers/hhpAwE.jpg"><img class="img-fluid" src="../assets/img/projects/Crushers/hhpAwE.jpg"></a></div>
-                                        <div class="col"><a href="../assets/img/projects/Crushers/JJpcra.png"><img class="img-fluid" src="../assets/img/projects/Crushers/JJpcra.png"></a></div>
-                                    </div>
+                            <section class="splide project-carousel mb-5" aria-label="Crushers screenshots" data-bss-baguettebox="">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="splide__slide"><a href="../assets/img/projects/Crushers/CrushersThumbnail.jpg"><img src="../assets/img/projects/Crushers/CrushersThumbnail.jpg" alt="Crushers screenshot 1"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/Crushers/hhpAwE.jpg"><img src="../assets/img/projects/Crushers/hhpAwE.jpg" alt="Crushers screenshot 2"></a></li>
+                                        <li class="splide__slide"><a href="../assets/img/projects/Crushers/JJpcra.png"><img src="../assets/img/projects/Crushers/JJpcra.png" alt="Crushers screenshot 3"></a></li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>About the project</h3>
-                            <p>CRUSHERS began as a three month challenge to create fun and polished vertical slice of a vehicle combat game. 
-                                As both the Game Designer and Gameplay Programmer, my main goal was to create an experience that felt satisfying from the first minute of play.
-                               <br> One of the biggest challenges was to develop a custom vehicle controller that would feel believable and and responsive for such a fast-paced game.
-                                <br> To achieve this, I have developed a custom car physics script using Unity's wheel colliders.
-                                <br> To support a diverse roster of vehicles, for different types of gameplay, I designed a system using Scriptable Objects, allowing each car's performance and equipment to be tuned independently without changing code.
-                                <br> Among all the extra work, I integrated the vehicle controller with modern Input System building foundation for multiplayer gameplay.
-                                <br> As a result we have created a scalable architecture for a vehicle combat game.</p>
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Year</h3>                 
-                            <p>2024</p>    
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Role</h3>
+                            </section>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-overview"><a class="link-primary me-2">#</a>Overview</h3>
+                            <p>CRUSHERS began as a three-month challenge to build a fun, polished vertical slice of a vehicle combat game.</p>
+                            <p>As both Game Designer and Gameplay Programmer, my goal was an experience that feels satisfying from the first minute of play.</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-contributions"><a class="link-primary me-2">#</a>My contributions</h3>
                             <ul>
-                                <li>Game Designer</li>
-                                <li>Gameplay Programmer</li>
-                                <li>Car Physics Programmer</li>
+                                <li>Built a custom car physics controller on top of Unity's Wheel Colliders</li>
+                                <li>Designed a Scriptable Object system for the vehicle roster, so each car's performance and equipment can be tuned independently without changing code</li>
+                                <li>Integrated the vehicle controller with Unity's Input System, laying the foundation for multiplayer</li>
+                                <li>Shaped the game design around fast, satisfying vehicle combat</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-tools"><a class="link-primary me-2">#</a>Tools</h3>
+                            <ul class="tool-list">
+                                <li>Unity</li>
+                                <li>C#</li>
+                                <li>Scriptable Objects</li>
+                                <li>Input System</li>
+                            </ul>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-challenges"><a class="link-primary me-2">#</a>Challenges</h3>
+                            <h4 class="fs-6 fw-bold mb-2">Making fast cars feel believable and responsive</h4>
+                            <p>A fast-paced combat game needs cars that react instantly but still feel physical. I wrote a custom car physics script around Unity's Wheel Colliders to get handling that is both responsive and believable.</p>
+                            <h4 class="fs-6 fw-bold mb-2">Supporting a diverse roster of vehicles</h4>
+                            <p>Different cars needed to suit different styles of play. Driving every car's stats and equipment from Scriptable Objects meant new vehicles could be created and balanced as data instead of code.</p>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-results"><a class="link-primary me-2">#</a>Results</h3>
+                            <ul>
+                                <li>A scalable architecture for a vehicle combat game, ready to grow beyond the vertical slice</li>
+                                <li>New cars can be added and balanced without touching code, which sped up iteration on the roster</li>
+                                <li>Input handling built on the Input System, giving the team a ready foundation for multiplayer</li>
                             </ul>
 
-                            <h3 class="fs-4 fw-bold mb-4" id="section-2"><a class="link-primary me-2">#</a>Collaborators</h3>
+                            <h3 class="fs-4 fw-bold mb-4" id="section-year"><a class="link-primary me-2">#</a>Year</h3>
+                            <p>2024</p>    
+                            <h3 class="fs-4 fw-bold mb-4" id="section-role"><a class="link-primary me-2">#</a>Role</h3>
+                            <ul>
+                                <li>Car Physics Programmer</li>
+                                <li>Gameplay Programmer</li>
+                                <li>Game Designer</li>
+                            </ul>
+
+                            <h3 class="fs-4 fw-bold mb-4" id="section-collaborators"><a class="link-primary me-2">#</a>Collaborators</h3>
                             <p>Chanel Parfait, Anthony Thai, Michael Lam, Belida Ouch, April O'Donnell</p>
                             <div class="d-grid mt-3">
                                 <a class="btn btn-lg btn-primary-dragient" role="button" href="https://chanel-parfait.itch.io/crushers">See the project</a>
@@ -102,6 +124,8 @@
     <script src="../assets/bootstrap/js/bootstrap.min.js" type="module"></script>
     <script src="../assets/js/baguetteBox.min.js" type="module"></script>
     <script src="../assets/js/template.js" type="module"></script>
+    <script src="../assets/js/splide.min.js"></script>
+    <script src="../assets/js/carousel.js"></script>
     <script type="module" src="../assets/js/background.js"></script>
 </body>
 
